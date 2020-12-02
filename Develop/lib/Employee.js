@@ -22,3 +22,4 @@ class Employee {
         console.log("employee")
     }
 }
+module.exports = Employee;
