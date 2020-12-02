@@ -20,7 +20,7 @@ Type "npm install" into CMD to install the neccesary packages for this repositor
 
 ## Usage
 
-Creating an html page which displays the members of a work group, and the relevant information that pertains to each individual employee.
+Creating an html page which displays the members of a work group, and the relevant information that pertains to each individual employee. The package can create cards for managers, engineers, interns, or a general employee.
 
 ## Credits
 
