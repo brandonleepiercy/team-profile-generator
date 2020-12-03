@@ -9,11 +9,11 @@ class Manager extends Employee {
     }
 
     getRole() {
-        console.log("manager");
+        return("Manager");
     }
 
     getOfficeNumber() {
-        console.log(this.officeNumber);
+        return(this.officeNumber);
     }
 }
 module.exports = Manager;
