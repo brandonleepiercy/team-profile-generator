@@ -22,6 +22,8 @@ Navigate into the "Develop" folder and run "npm install" to install the neccesar
 
 Creating an html page which displays the members of a work group, and the relevant information that pertains to each individual employee. The package can create cards for managers, engineers, or interns.
 
+[Instructional Video](https://www.youtube.com/watch?v=OAghsGplDPg&feature=youtu.be)
+
 ## Credits
 
 Brandon Lee Piercy
