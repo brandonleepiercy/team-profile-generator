@@ -23,7 +23,7 @@ function makeEngineer() {
             {
                 type:'input',
                 name:'id',
-                message:'Enter the ID of your engineer:'
+                message:'Enter the ID number of your engineer:'
             },
             {
                 type:'input',
@@ -56,6 +56,7 @@ function makeEngineer() {
                     break;
                 case 'Exit':
                     console.log(myTeam);
+                    render(myTeam);
             };
 
         }).catch(error=> {
@@ -78,7 +79,7 @@ function makeIntern() {
             {
                 type:'input',
                 name:'id',
-                message:'Enter the ID of your intern:'
+                message:'Enter the ID number of your intern:'
             },
             {
                 type:'input',
@@ -111,6 +112,7 @@ function makeIntern() {
                     break;
                 case 'Exit':
                     console.log(myTeam);
+                    render(myTeam);
             };
 
         }).catch(error=> {
@@ -123,14 +125,62 @@ function makeIntern() {
 };
 
 function makeManager() {
+    inquirer
+        .prompt([
+            {
+                type:'input',
+                name:'name',
+                message:'Enter the name of your manager:'
+            },
+            {
+                type:'input',
+                name:'id',
+                message:'Enter the ID number of your manager:'
+            },
+            {
+                type:'input',
+                name:'email',
+                message:'Enter the email of your manager:'
+            },
+            {
+                type:'input',
+                name:'office',
+                message:'Enter the office number of your manager:'
+            },
+            {
+                type:'list',
+                name:'next',
+                message:'Pick another employee class to generate, or exit the CLI.',
+                choices:['Engineer', 'Intern', 'Manager', 'Exit']
+            }
+        ]).then(answers => {
+            var newInt = new Manager (answers.name, answers.id, answers.email, answers.office);
+            myTeam.push(newInt);
+            switch(answers.next) {
+                case 'Engineer':
+                    makeEngineer();
+                    break;
+                case 'Intern':
+                    makeIntern();
+                    break;
+                case 'Manager':
+                    makeManager();
+                    break;
+                case 'Exit':
+                    console.log(myTeam);
+                    render(myTeam);
+            };
 
+        }).catch(error=> {
+            if(error.isTtyError) {
+                console.log("prompt could not be rendered in the current environment");
+            } else {
+                console.log("something else went wrong");
+            }
+        });
 };
 
-function makeEmployee() {
-
-};
-
-makeEngineer();
+makeManager();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
