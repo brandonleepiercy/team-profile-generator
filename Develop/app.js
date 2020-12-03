@@ -10,7 +10,76 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const myTeam = [];
 
+function makeEngineer() {
+    inquirer
+        .prompt([
+            {
+                type:'input',
+                name:'name',
+                message:'Enter the name of your engineer:'
+            },
+            {
+                type:'input',
+                name:'id',
+                message:'Enter the ID of your engineer:'
+            },
+            {
+                type:'input',
+                name:'email',
+                message:'Enter the email of your engineer:'
+            },
+            {
+                type:'input',
+                name:'github',
+                message:'Enter the github username of your engineer'
+            },
+            {
+                type:'list',
+                name:'next',
+                message:'Pick another employee class to generate, or exit the CLI.',
+                choices:['Engineer', 'Intern', 'Manager', 'Exit']
+            }
+        ]).then(answers => {
+            var newEng = new Engineer (answers.name, answers.id, answers.email, answers.github);
+            myTeam.push(newEng);
+            switch(answers.next) {
+                case 'Engineer':
+                    makeEngineer();
+                    break;
+                case 'Intern':
+                    makeIntern();
+                    break;
+                case 'Manager':
+                    makeManager();
+                    break;
+                case 'Exit':
+                    console.log(myTeam);
+            };
+
+        }).catch(error=> {
+            if(error.isTtyError) {
+                console.log("prompt could not be rendered in the current environment");
+            } else {
+                console.log("something else went wrong");
+            }
+        });
+};
+
+function makeIntern() {
+
+};
+
+function makeManager() {
+
+};
+
+function makeEmployee() {
+
+};
+
+makeEngineer();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
