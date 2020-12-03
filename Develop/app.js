@@ -56,7 +56,7 @@ function makeEngineer() {
                     break;
                 case 'Exit':
                     console.log(myTeam);
-                    fs.writeFile("file.html", render(myTeam),
+                    fs.writeFile("./output/file.html", render(myTeam),
                     function(err){
                         if (err) throw err;
                     });
@@ -115,7 +115,7 @@ function makeIntern() {
                     break;
                 case 'Exit':
                     console.log(myTeam);
-                    fs.writeFile("file.html", render(myTeam),
+                    fs.writeFile("./output/file.html", render(myTeam),
                     function(err){
                         if (err) throw err;
                     });
@@ -174,7 +174,7 @@ function makeManager() {
                     break;
                 case 'Exit':
                     console.log(myTeam);
-                    fs.writeFile("file.html", render(myTeam),
+                    fs.writeFile("./output/file.html", render(myTeam),
                     function(err){
                         if (err) throw err;
                     });
