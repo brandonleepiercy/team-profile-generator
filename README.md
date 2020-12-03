@@ -16,11 +16,11 @@ This repository contains a set of js files which help the user automatically gen
 
 ## Installation
 
-Type "npm install" into CMD to install the neccesary packages for this repository.
+Navigate into the "Develop" folder and run "npm install" to install the neccesary packages for this repository.
 
 ## Usage
 
-Creating an html page which displays the members of a work group, and the relevant information that pertains to each individual employee. The package can create cards for managers, engineers, interns, or a general employee.
+Creating an html page which displays the members of a work group, and the relevant information that pertains to each individual employee. The package can create cards for managers, engineers, or interns.
 
 ## Credits
 
@@ -32,7 +32,7 @@ MIT
 
 ## Tests
 
-
+Run "npm test" within the "develop" folder to automatically test the application's ability to generate html based on placeholder values passed through the various employee generation functions.
 
 ## Questions
 
